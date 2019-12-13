@@ -3,5 +3,5 @@ applications:
 - name: indice-de-personalite
   command: npm start
   path: .
-  memory: 1M
+  memory: 256M
   instances: 1
