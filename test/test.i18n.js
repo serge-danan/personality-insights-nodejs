@@ -36,6 +36,19 @@ describe('i18n-en', function() {
   );
 });
 
+describe('i18n-fr', function() {
+  it('French localized page should contain specific text when GET /', () =>
+    request(app)
+      .get('/')
+      .set('Accept-language', 'fr')
+      .expect(200)
+      .expect(function containsString(res) {
+        if (res.text.indexOf('Try the service') == -1)
+          throw new Error('Invalid translation string');
+      })
+  );
+});
+
 describe('i18n-es', function() {
   it('Spanish localized page should contain specific text when GET /', () =>
     request(app)
